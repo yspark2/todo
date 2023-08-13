@@ -17,18 +17,16 @@ class FirstFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentFirstBinding.inflate(inflater, container, false)
-        binding.lifecycleOwner = this
+        //binding.lifecycleOwner = this
 
         val todoList = mutableListOf<Items>()
-        for(i in 1..100){
+        for(i in 1..30){
             todoList.add(Items("todo $i"))
         }
 
-        val adapter = ListItemAdapter(todoList)
-
+        val adapter = FragmentAdapter(todoList)
         binding.rvTodo.layoutManager = LinearLayoutManager(requireContext())
         binding.rvTodo.adapter = adapter
-
         return binding.root
     }
 }

@@ -8,6 +8,7 @@ import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
 class MainActivity : AppCompatActivity() {
+
     lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,9 +21,8 @@ class MainActivity : AppCompatActivity() {
         val adapter = ViewPager2Adapter(this)
 
         viewPager.adapter = adapter
-
-        TabLayoutMediator(tabLayout, viewPager) {tab, position ->
-            when(position){
+        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
+            when (position) {
                 0 -> tab.text = "Todo"
                 1 -> tab.text = "BookMark"
             }

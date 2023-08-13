@@ -16,14 +16,14 @@ class SecondFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentSecondBinding.inflate(inflater, container, false)
-        binding.lifecycleOwner = this
+        //binding.lifecycleOwner = this
 
         val bookMarkList = mutableListOf<Items>()
-        for(i in 1..100){
+        for (i in 1..30) {
             bookMarkList.add(Items("bookmark $i"))
         }
 
-        val adapter = ListItemAdapter(bookMarkList)
+        val adapter = FragmentAdapter(bookMarkList)
 
         binding.rvBookmark.layoutManager = LinearLayoutManager(requireContext())
         binding.rvBookmark.adapter = adapter

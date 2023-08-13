@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.camp.databinding.RecyclerViewBinding
 
-class ListItemAdapter(private val itemList : List<Items>): RecyclerView.Adapter<ListItemAdapter.MyViewHolder>(){
+class FragmentAdapter(private val itemList : List<Items>): RecyclerView.Adapter<FragmentAdapter.MyViewHolder>(){
 
     class MyViewHolder(private val binding: RecyclerViewBinding) : RecyclerView.ViewHolder(binding.root){
         fun bind(items: Items){
@@ -23,7 +23,7 @@ class ListItemAdapter(private val itemList : List<Items>): RecyclerView.Adapter<
         return itemList.size
     }
 
-    override fun onBindViewHolder(holder: ListItemAdapter.MyViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: FragmentAdapter.MyViewHolder, position: Int) {
         holder.bind(itemList[position])
     }
 
